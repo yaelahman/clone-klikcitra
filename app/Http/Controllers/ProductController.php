@@ -68,20 +68,22 @@ class ProductController extends Controller
             $product->on_click = 0;
 
             if ($product->save()) {
-                foreach ($request->file('image') as $index => $row) {
-                    $format = $row->getClientOriginalName();
-                    $name = Str::random(30);
-                    $newName = $name . '.' . $format;
-                    $row->storeAs(
-                        'products',
-                        $newName
-                    );
+                if ($request->image != null) {
+                    foreach ($request->file('image') as $index => $row) {
+                        $format = $row->getClientOriginalName();
+                        $name = Str::random(30);
+                        $newName = $name . '.' . $format;
+                        $row->storeAs(
+                            'products',
+                            $newName
+                        );
 
-                    $image = new ImageProduct();
-                    $image->id_product = $product->id;
-                    $image->image = $newName;
-                    $image->is_main = $index == 0 ? 1 : 0;
-                    $image->save();
+                        $image = new ImageProduct();
+                        $image->id_product = $product->id;
+                        $image->image = $newName;
+                        $image->is_main = $index == 0 ? 1 : 0;
+                        $image->save();
+                    }
                 }
 
                 $request->session()->flash('alert', 'success');
@@ -173,5 +175,13 @@ class ProductController extends Controller
             $request->session()->flash('message', 'Product deleted successfully');
             return redirect()->to(route('product.index'));
         }
+    }
+
+    public function ImageProduct(Request $request)
+    {
+        $image = ImageProduct::where('id_product', $request->productId)->get();
+        return response()->json([
+            'data' => $image
+        ], 200);
     }
 }

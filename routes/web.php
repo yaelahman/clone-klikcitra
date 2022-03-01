@@ -13,11 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Route::get('/', function () {
+    return view('landing');
+});
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::prefix('/admin')->group(function () {
+    Auth::routes();
 
-Route::resource('/category', 'CategoryController');
-Route::resource('/product', 'ProductController');
-Route::get('/profile', 'HomeController@profile')->name('profile.index');
-Route::post('/profile/{profile}', 'HomeController@updateProfile')->name('profile.update');
+    Route::get('/', 'HomeController@index')->name('home');
+
+    Route::resource('/category', 'CategoryController');
+
+    Route::post('/product/image', 'ProductController@ImageProduct')->name('product.image');
+    Route::resource('/product', 'ProductController');
+
+    Route::get('/profile', 'HomeController@profile')->name('profile.index');
+    Route::post('/profile/{profile}', 'HomeController@updateProfile')->name('profile.update');
+});
