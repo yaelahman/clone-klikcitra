@@ -85,6 +85,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- Modal -->
         <div class="modal fade" id="bs-example-modal-lg" tabindex="-1" aria-labelledby="bs-example-modal-lg"
             aria-hidden="true">
