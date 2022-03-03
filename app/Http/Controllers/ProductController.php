@@ -71,7 +71,7 @@ class ProductController extends Controller
                 if ($request->image != null) {
                     foreach ($request->file('image') as $index => $row) {
                         $format = $row->getClientOriginalName();
-                        $name = Str::random(30);
+                        $name = Str::random(11);
                         $newName = $name . $format;
                         $row->storeAs(
                             'public/products',
@@ -150,11 +150,13 @@ class ProductController extends Controller
             $product->stock = $request->stock;
 
             if ($product->save()) {
+                ImageProduct::where('id_product', $id)
+                    ->whereNotIn('id', $request->exceptImage)
+                    ->delete();
                 if ($request->image != null) {
-                    ImageProduct::where('id_product', $id)->delete();
                     foreach ($request->file('image') as $index => $row) {
                         $format = $row->getClientOriginalName();
-                        $name = Str::random(30);
+                        $name = Str::random(11);
                         $newName = $name . $format;
                         $row->storeAs(
                             'public/products',
@@ -164,7 +166,7 @@ class ProductController extends Controller
                         $image = new ImageProduct();
                         $image->id_product = $product->id;
                         $image->image = $newName;
-                        $image->is_main = $index == 0 ? 1 : 0;
+                        $image->is_main = 0;
                         $image->save();
                     }
                 }

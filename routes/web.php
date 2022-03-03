@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', 'LandingController@index');
 
 Route::prefix('/admin')->group(function () {
     Auth::routes();
@@ -26,6 +24,8 @@ Route::prefix('/admin')->group(function () {
 
     Route::post('/product/image', 'ProductController@ImageProduct')->name('product.image');
     Route::resource('/product', 'ProductController');
+
+    Route::resource('/banner', 'BannerController');
 
     Route::get('/profile', 'HomeController@profile')->name('profile.index');
     Route::post('/profile/{profile}', 'HomeController@updateProfile')->name('profile.update');

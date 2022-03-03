@@ -78,25 +78,30 @@
 
                     <div class="file-form-list">
                         @foreach ($productImage as $index => $item)
-                        <div class="row form-image-{{ $index }}">
-                            <div class="col-sm-6">
-                                <div class="form-group mt-3">
-                                    <div class="col-md-12">
-                                        <input type="file" id="image" onchange="preview({{ $index }}})" name="image[]" value="{{ asset('storage/products/' . $item->image) }}"
-                                            class="form-control ps-0 form-control-line">
+                            <div class="row form-image-{{ $index }}">
+                                <div class="col-sm-6">
+                                    <div class="form-group mt-3">
+                                        <div class="col-md-12">
+                                            <input type="file" id="image" onchange="preview({{ $index }})"
+                                                name="image[]" class="form-control ps-0 form-control-line">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="btn-group">
-                                    <a href="{{ asset('storage/products/' . $item->image) }}" class="btn btn-info mt-3 lihat-gambar-{{ $index }}" target="_blank"><i class="fas fa-eye"></i>&nbsp;Lihat
-                                        Gambar</a>
-                                    &nbsp;
-                                    <button type="button" class="btn btn-danger mt-3" onclick="deleteFormImage({{ $index }})"><i class="fas fa-trash"></i>&nbsp;Hapus
-                                        Gambar</button>
+                                <div class="col-sm-6">
+                                    <div class="btn-group">
+                                        <a href="{{ asset('storage/products/' . $item->image) }}"
+                                            class="btn btn-info mt-3 lihat-gambar-{{ $index }}" target="_blank"><i
+                                                class="fas fa-eye"></i>&nbsp;Lihat
+                                            Gambar</a>
+                                        &nbsp;
+                                        <button type="button" class="btn btn-danger mt-3"
+                                            onclick="deleteFormImage({{ $index }})"><i
+                                                class="fas fa-trash"></i>&nbsp;Hapus
+                                            Gambar</button>
+                                    </div>
                                 </div>
+                                <input type="hidden" name="exceptImage[]" value="{{ $item->id }}">
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     <div class="form-group mt-3">
@@ -111,7 +116,7 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        let index = 0
+        let index = parseInt("{{ count($productImage) }}")
         $('.addImageButton').on('click', function() {
             $('.file-form-list').append(`
             <div class="row form-image-${index}">

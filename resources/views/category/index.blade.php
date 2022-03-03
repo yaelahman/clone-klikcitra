@@ -53,7 +53,8 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $row->name }}</td>
                                     <td>
-                                        <span class="btn btn-{{ $row->status == 1 ? 'success' : 'danger' }} btn-sm btn-flat"
+                                        <span
+                                            class="btn btn-{{ $row->status == 1 ? 'success' : 'danger' }} btn-sm btn-flat"
                                             style="color: white; font-size: 12px">
                                             {{ $row->status == 1 ? 'ACTIVE' : 'NON-ACTIVE' }}
                                         </span>
@@ -84,7 +85,7 @@
         $('.button-delete').click(function() {
             var id = $(this).attr('data-id');
             var form = $('#form-delete');
-            form.attr('action', "{{ url('/category') }}/" + id);
+            form.attr('action', "{{ url('/admin/category') }}/" + id);
 
             Swal.fire({
                 title: 'Are you sure?',
@@ -105,6 +106,5 @@
                 }
             })
         });
-
     </script>
 @endsection
