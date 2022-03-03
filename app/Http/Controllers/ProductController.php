@@ -72,9 +72,9 @@ class ProductController extends Controller
                     foreach ($request->file('image') as $index => $row) {
                         $format = $row->getClientOriginalName();
                         $name = Str::random(30);
-                        $newName = $name . '.' . $format;
+                        $newName = $name . $format;
                         $row->storeAs(
-                            'products',
+                            'public/products',
                             $newName
                         );
 
@@ -120,9 +120,11 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $category = Category::all();
+        $productImage = ImageProduct::where('id_product', $id)->get();
 
         $data = [
             'product' => $product,
+            'productImage' => $productImage,
             'category' => $category
         ];
 
@@ -148,8 +150,27 @@ class ProductController extends Controller
             $product->stock = $request->stock;
 
             if ($product->save()) {
+                if ($request->image != null) {
+                    ImageProduct::where('id_product', $id)->delete();
+                    foreach ($request->file('image') as $index => $row) {
+                        $format = $row->getClientOriginalName();
+                        $name = Str::random(30);
+                        $newName = $name . $format;
+                        $row->storeAs(
+                            'public/products',
+                            $newName
+                        );
+
+                        $image = new ImageProduct();
+                        $image->id_product = $product->id;
+                        $image->image = $newName;
+                        $image->is_main = $index == 0 ? 1 : 0;
+                        $image->save();
+                    }
+                }
+
                 $request->session()->flash('alert', 'success');
-                $request->session()->flash('message', 'Product updated successfully');
+                $request->session()->flash('message', 'Product created successfully');
 
                 DB::commit();
                 return redirect()->to(route('product.index'));

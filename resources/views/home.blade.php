@@ -54,14 +54,9 @@
                             <span class="text-muted">Request</span>
                         </div>
                         {{-- <span class="text-info">30%</span> --}}
-                        <div class="progress mt-3">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 100%; height: 6px;"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Column -->
-        </div> --}}
+        <div class="progress mt-3">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 100%; height: 6px;" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
     </div>
 @endsection

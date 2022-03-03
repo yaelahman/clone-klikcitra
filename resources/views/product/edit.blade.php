@@ -27,13 +27,13 @@
             <div class="card-body">
                 <form class="form-horizontal form-material mx-2" method="post"
                     action="{{ route('product.update', ['product' => $product->id]) }}" enctype="multipart/form-data">
-                    @csrf
                     @method('put')
+                    @csrf
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Nama</label>
                         <div class="col-md-12">
-                            <input type="text" id="name" name="name" value="{{ $product->name }}" required placeholder="Seblak"
-                                class="form-control ps-0 form-control-line">
+                            <input type="text" id="name" name="name" required placeholder="Seblak"
+                                value="{{ $product->name }}" class="form-control ps-0 form-control-line">
                         </div>
                     </div>
                     <div class="form-group">
@@ -42,7 +42,9 @@
                             <select name="id_category" id="id_category" class="form-control" required>
                                 <option value="" disabled selected>-- Pilih Kategori --</option>
                                 @foreach ($category as $item)
-                                <option value="{{ $item->id }}" {{ $product->id_category == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
+                                    <option value="{{ $item->id }}"
+                                        {{ $item->id == $product->id_category ? 'selected' : '' }}>{{ $item->name }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -50,27 +52,56 @@
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Deskripsi</label>
                         <div class="col-md-12">
-                            <textarea name="description" id="description" cols="30" rows="10" class="form-control" value="{{ $product->description }}" required>{{ $product->description }}</textarea>
+                            <textarea name="description" id="description" cols="30" rows="10" class="form-control"
+                                value="......" required>{{ $product->description }}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12 mb-0">No WhatsApp</label>
                         <div class="col-md-12">
-                            <input type="number" id="whatsapp" name="whatsapp" value="{{ $product->whatsapp }}" required placeholder="0857xxx"
-                                class="form-control ps-0 form-control-line">
+                            <input type="number" id="whatsapp" name="whatsapp" required placeholder="0857xxx"
+                                value="{{ $product->whatsapp }}" class="form-control ps-0 form-control-line">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Stok Barang</label>
                         <div class="col-md-12">
-                            <input type="number" id="stock" name="stock" value="{{ $product->stock }}" required placeholder="0"
-                                class="form-control ps-0 form-control-line">
+                            <input type="number" id="stock" name="stock" required placeholder="0"
+                                value="{{ $product->stock }}" class="form-control ps-0 form-control-line">
                         </div>
                     </div>
-                    <button class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;Tambah Gambar Produk</button>
+
+                    <button type="button" class="btn btn-primary addImageButton"><i class="fas fa-plus"></i>&nbsp;Tambah
+                        Gambar
+                        Produk
+                    </button>
+
+                    <div class="file-form-list">
+                        @foreach ($productImage as $index => $item)
+                        <div class="row form-image-{{ $index }}">
+                            <div class="col-sm-6">
+                                <div class="form-group mt-3">
+                                    <div class="col-md-12">
+                                        <input type="file" id="image" onchange="preview({{ $index }}})" name="image[]" value="{{ asset('storage/products/' . $item->image) }}"
+                                            class="form-control ps-0 form-control-line">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="btn-group">
+                                    <a href="{{ asset('storage/products/' . $item->image) }}" class="btn btn-info mt-3 lihat-gambar-{{ $index }}" target="_blank"><i class="fas fa-eye"></i>&nbsp;Lihat
+                                        Gambar</a>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger mt-3" onclick="deleteFormImage({{ $index }})"><i class="fas fa-trash"></i>&nbsp;Hapus
+                                        Gambar</button>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                     <div class="form-group mt-3">
                         <div class="col-sm-12 d-flex">
-                            <button class="btn btn-success mx-auto mx-md-0 text-white">Update Product</button>
+                            <button class="btn btn-success mx-auto mx-md-0 text-white">Save Product</button>
                         </div>
                     </div>
                 </form>
@@ -79,4 +110,45 @@
     </div>
 @endsection
 @section('script')
+    <script type="text/javascript">
+        let index = 0
+        $('.addImageButton').on('click', function() {
+            $('.file-form-list').append(`
+            <div class="row form-image-${index}">
+                <div class="col-sm-6">
+                    <div class="form-group mt-3">
+                        <div class="col-md-12">
+                            <input type="file" id="image" onchange="preview(${index})" name="image[]" required
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-info mt-3 d-none lihat-gambar-${index}" target="_blank"><i class="fas fa-eye"></i>&nbsp;Lihat
+                            Gambar</a>
+                        &nbsp;
+                        <button type="button" class="btn btn-danger mt-3" onclick="deleteFormImage(${index})"><i class="fas fa-trash"></i>&nbsp;Hapus
+                            Gambar</button>
+                    </div>
+                </div>
+            </div>
+            `)
+            index++
+        })
+
+        function preview(index) {
+            console.log(event.target.files)
+            $('.lihat-gambar-' + index).removeClass('d-none')
+            $('.lihat-gambar-' + index).attr('href', URL.createObjectURL(event.target.files[0]))
+        }
+
+        $('#image').on('change', function(e) {
+            console.log(e.target.files[0])
+        })
+
+        function deleteFormImage(indexNow) {
+            $('.form-image-' + indexNow).remove()
+        }
+    </script>
 @endsection
