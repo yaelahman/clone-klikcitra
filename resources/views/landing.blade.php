@@ -1,528 +1,351 @@
 <!doctype html>
-<html class="not-ie no-js" lang="en-US">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>CITRA NUSANTARA COMPUTER | Computer Accessories &#8211; Gaming Gear &#8211; Sparepart Laptop</title>
-    <link href="//www.google-analytics.com" rel="dns-prefetch">
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link rel='dns-prefetch' href='//s.w.org' />
-    <link rel='stylesheet' id='fanbootui-css-css'
-        href='https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/libs/jquery.fanbootui.css?ver=1.0'
-        media='screen' />
-    <link rel='stylesheet' id='oketheme-css'
-        href='https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/style.css?ver=1.0' media='all' />
-    <link rel='stylesheet' id='redux-google-fonts-lapax_opt-css'
-        href='https://fonts.googleapis.com/css?family=Open+Sans&#038;ver=1596523254' media='all' />
-    <script type='text/javascript'
-        src='https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/js/jquery-2.1.3.min.js?ver=2.1.3'></script>
-    <link rel='https://api.w.org/' href='https://klikcitra.com/wp-json/' />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://klikcitra.com/xmlrpc.php?rsd" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-        href="https://klikcitra.com/wp-includes/wlwmanifest.xml" />
-    <meta name="generator" content="WordPress 4.9.19" />
-    <style type="text/css" title="dynamic-css" class="options-output">
-        #testiwrap {
-            background-color: #F5F5F5;
-            background-image: url('http://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/testimonial.png');
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>{{ $settings['judul'] }}</title>
+    <style>
+        .card-product {
+            transition: transform .2s;
         }
 
-        body {
-            background-color: #666666;
-            background-image: url('http://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/pattern.png');
+        .card-product:hover {
+            transform: scale(1.02);
+            /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         }
 
-        #headerwrap {
-            background-color: #f78009;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: inherit;
-            background-position: center center;
-        }
-
-        body {
-            font-family: "Open Sans";
-            color: #222;
+        .btn-card {
+            width: auto;
+            position: absolute;
+            margin: 10px;
+            border-radius: 0;
+            padding: 4px;
             font-size: 14px;
         }
 
-    </style>
-    <link href="http://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/favicon.png" rel="icon" />
-    <link rel="stylesheet" href="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/responsive.css" media="all" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <meta property="og:title" content="PASAR NUSANTARA" />
-    <meta property="og:type" content="website" />
-    {{-- <meta property="og:url" content="https://klikcitra.com" />
-    <meta property="og:image" content="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/og.jpg" /> --}}
-
-    <style type="text/css">
-        @media screen and (max-width:926px) {
-            #sideup {
-                right: -31px;
-                -ms-transform: rotate(90deg);
-                -webkit-transform: rotate(90deg);
-                transform: rotate(90deg);
-            }
-
-            .sidebarwrap {
-                right: 0;
-            }
+        .btn-hubungi {
+            display: none;
+            margin-top: -20px;
         }
 
-        @media screen and (max-width:765px) {
-            .kategori {
-                background: #08044c;
-            }
+        .card-product:hover .btn-hubungi {
+            display: unset;
         }
 
-        .container {
-            float: left;
-            padding-right: 20px;
-            padding-left: 0;
+        .wabutton {
+            position: fixed;
+            width: 160px;
+            height: 40px;
+            bottom: 110px;
+            right: 120px;
+            /* left: 0; */
+            opacity: .9
         }
 
-        .sidebarwrap {
-            float: right;
-        }
-
-        a,
-        h1,
-        h2,
-        h3,
-        h4,
-        .headtitle,
-        .headlogo a,
-        .whyicon,
-        .toggleMenu {
-            color: #08044c;
-        }
-
-        .button-primary,
-        .form-submit input,
-        button,
-        #topheadwrap,
-        .headsearch button,
-        .kategori button,
-        #tickerwrap,
-        .pagination a:hover,
-        #footerback,
-        #topmobile,
-        #sideup {
-            background: #08044c;
-        }
-
-
-        .Putih {
-            background: #FFFFFF;
-        }
-
-        .Merah {
-            background: #FF0000;
-        }
-
-        .Biru {
-            background: #0066FF;
-        }
-
-        .Hijau {
-            background: #009933;
-        }
-
-        .Kuning {
-            background: #FFFF00;
-        }
-
-        .Orange {
-            background: #FF6600;
-        }
-
-        .Hitam {
-            background: #000000;
-        }
-
-        .Silver {
-            background: #E6E6E6;
-        }
-
-        .Biru-Muda {
-            background: #00CCFF;
-        }
-
-        .Ungu {
-            background: #9933FF;
-        }
-
-        .Pink {
-            background: #FF3399;
-        }
-
-        .Coklat {
-            background: #8A2E00;
-        }
-
-
-        /* Diatas merupakan format custom warna versi lama (sebelum versi 2.0),
-jangan dihapus bagi Anda yang sebelumnya memiliki
-banyak postingan produk yang pilihan warnanya menggunakan
-cara lama/versi lama. Cara terbaru menambahkan warna
-berada pada tab Custom Warna (untuk versi 2.0 keatas).*/
-        a:hover {
-            color: #FF8000;
-        }
-
-        .button-primary:hover,
-        .form-submit input:hover,
-        button:hover,
-        .opencart:hover,
-        .openkontak:hover,
-        .openside:hover {
-            background: #FF8000;
-        }
-
-        .tophead a {
-            color: #FFF;
+        .wabutton:hover {
+            bottom: 108px;
+            opacity: 1
         }
 
     </style>
-
-
-
-
-
-
-    <script type="text/javascript">
-        var templateDirectory = "https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72";
-    </script>
 </head>
 
-<body>
-    <!-- Start Wrapperwide -->
-    <div id="wrapperwide">
-        <div id="topheadwrap">
-            <div class="tophead">
-                <a href="#kontak-kami" class="pop" title="Semua Kontak Kami">
-                    <div class="headkontak">
-                        <span class="icons" style="margin-right:5px;font-size:110%;">q</span> Kontak Kami
-                    </div>
-                </a>
-                <div class="topcart">
-                    <p>Selamat berbelanja, Shopper!</p>
-                </div>
-                <div style="clear: both"></div>
-            </div>
-            <div style="clear: both"></div>
+<body style="background-color: #F5F5F5;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #08044C;">
+        <div class="container">
+            <a class="navbar-brand" href="#kontak" style="font-size: 14px"><i
+                    class="bi bi-telephone mr-2"></i>&nbsp;Kontak
+                Kami</a>
+            <span class="navbar-brand" style="font-size: 14px">{{ $settings['navbar_kanan'] }}</span>
         </div>
-
-        <!-- Menu Navigasi -->
-        {{-- <div id="navigasi">
-            <div class="topmenu">
-                <div class="toggleMenu"><i class="el-icon-resize-vertical"></i> MENU NAVIGASI</div>
-                <div style="clear: both"></div>
-                <ul class="naviku">
-                    <li class="home"><a href="https://klikcitra.com"><i class="el-icon-home"
-                                style="margin-right:5px"></i> Beranda</a></li>
-                    <li class="page_item page-item-10"><a href="https://klikcitra.com/cara-belanja">Cara Belanja</a>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="margin-top: 50px;">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-uppercase" href="{{ route('landing') }}"><i
+                                class="bi bi-house-door-fill"></i>&nbsp;Beranda</a>
                     </li>
-                    <li class="page_item page-item-11"><a href="https://klikcitra.com/cek-biaya-kirim">Cek Biaya
-                            Kirim</a></li>
-                    <li class="page_item page-item-12"><a href="https://klikcitra.com/cek-resi">Cek Resi</a></li>
-                    <li class="page_item page-item-45"><a href="https://klikcitra.com/hubungi-kami">Hubungi Kami</a>
-                    </li>
-                    <li class="page_item page-item-9"><a href="https://klikcitra.com/katalog">Katalog</a></li>
-                    <li class="page_item page-item-8"><a href="https://klikcitra.com/konfirmasi">Konfirmasi</a></li>
-                    <li class="page_item page-item-13"><a href="https://klikcitra.com/testimonial">Testimonial</a></li>
-                    <li><a href="https://klikcitra.com/blog">Artikel Terbaru</a>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li> -->
                 </ul>
             </div>
-            <div style="clear: both"></div>
-        </div> --}}
-
-        <!-- Header -->
-        <div id="headerwrap" style="margin-top: 40px">
-            <div id="header">
-                <div class="headlogo">
-                    <a href="">PASAR</a>
-                    <p>BARANG SERBA ADA</p>
-                </div>
-                <div class="headsearch">
-                    <form method="get" action="" role="search">
-                        <input type="search" name="s" placeholder="Ketik kata kunci pencarian">
-                        <select name='cat' id='cat' class='select'>
-                            <option value='0' selected='selected'>Semua Kategori</option>
-                            <option class="level-0" value="14">Case Harddisk</option>
-                            <option class="level-0" value="7">Converter NYK</option>
-                            <option class="level-0" value="8">Fan ALSEYE</option>
-                            <option class="level-0" value="6">Gaming Dareu</option>
-                            <option class="level-0" value="4">Gaming NYK</option>
-                            <option class="level-0" value="5">Gaming SADES</option>
-                            <option class="level-0" value="11">Kabel &amp; Converter</option>
-                            <option class="level-0" value="10">Keyboard M-Tech</option>
-                            <option class="level-0" value="9">Mouse M-Tech</option>
-                            <option class="level-0" value="17">Mousepad</option>
-                            <option class="level-0" value="15">Pheriperal</option>
-                            <option class="level-0" value="18">Produk Philips</option>
-                            <option class="level-0" value="16">Sparepart Laptop</option>
-                            <option class="level-0" value="1">Uncategorized</option>
-                            <option class="level-0" value="13">USB &#8211; HUB</option>
-                        </select>
-                        <button type="submit" role="button"><i class="el-icon-search"></i> Cari</button>
-                    </form>
-                </div>
-                <div style="clear: both"></div>
-            </div>
-            <div id="kategoriwrap">
-                <div class="kategori">
-                    <div class="jambuka"><i class="glyphicon glyphicon glyphicon-time"></i> Buka Senin - Jumat
-                        Jam 09.00 - 17.30 , Sabtu jam 09.00 - 14.00 . Minggu & Hari Besar Tutup</div>
-                </div>
-            </div>
-
-            <div id="tickerwrap">
-                <div class="ticker">
-                    <span class="tick">SELAMAT DATANG DI PASAR</span> <span class="tick">ＳＥＬＡＭＡＴ
-                        ＢＥＬＡＮＪＡ ．</span>
-                </div>
-            </div>
-            <h1 class="seo">CITRA NUSANTARA COMPUTER</h1>
-            <div class="topslider">
-                <div id="slider" class="owl-carousel">
-                </div>
-                <div style="clear: both"></div>
-            </div>
-            <div id="welcome">
-                <img class="alignnone size-full wp-image-143"
-                    src="http://klikcitra.com/wp-content/uploads/2020/06/header.jpeg" alt="" width="1273"
-                    height="377" />
-            </div>
-            <div style="clear: both"></div>
         </div>
-
-        <!-- Button trigger modal -->
-
-        <div id="wrappercontain">
-            <!-- Start Wrappercontain -->
-            <h2 class="seo">PASAR</h2>
-            <div id="greywrap">
-                <div class="containwrap">
-                    <div class="headsection"><span class="headtitle">Produk Terbaru</span></div>
-                    <div class="gridbox">
-                        <div id="gridview">
-                            <!-- Loop - Oketheme.com -->
-                            @foreach ($products as $index => $item)
-                                <div class="gridpad">
-                                    <div class="grid">
-                                        <div class="arealabel">
-                                            <div></div>
-                                        </div>
-                                        <div class="grids">
-                                            <a href="#kontak-kami" class="pop">
-                                                <button name="kontak" />
-                                                <span class="glyphicon glyphicon-earphone"></span> Hubungi Kami
-                                                </button>
-                                            </a>
-
-                                        </div>
-                                        <div class="prices">
-                                            <div class="wrapthumb">
-                                                <a href="https://klikcitra.com/nyk-a75-hexa.html"
-                                                    title="{{ $item->name }}">
-                                                    <img width="260" height="280"
-                                                        src="https://klikcitra.com/wp-content/uploads/2021/08/A75-260x280.jpg"
-                                                        class="attachment-fixgrid size-fixgrid wp-post-image" alt="" />
-                                                </a>
-                                            </div>
-
-
-                                            <a href="#quickorder-1118" class="pop"
-                                                title="QUICK ORDER : {{ $item->name }}">
-                                                <div class="quicklabel">
-                                                    <span class="glyphicon glyphicon-flash"></span> QUICK ORDER
-                                                </div>
-                                            </a>
-                                            <div style="clear: both"></div>
-
-                                            <div id="quickorder-1118" class="quickpop">
-                                                <div class="judul" style="margin-top:0;">
-                                                    <span class="glyphicon glyphicon-flash"></span> {{ $item->name }}
-                                                </div>
-                                                <p class="medium" style="text-align:right">*Pemesanan dapat
-                                                    langsung
-                                                    menghubungi kontak di bawah ini:</p>
-                                                <div class="quickview">
-                                                    <img width="260" height="280"
-                                                        src="https://klikcitra.com/wp-content/uploads/2021/08/A75-260x280.jpg"
-                                                        class="attachment-fixgrid size-fixgrid wp-post-image" alt="" />
-                                                    *Harga Hubungi CS <div class="medium" style="padding:5px">
-                                                        <font color="green"><span class="glyphicon glyphicon-ok"></span>
-                                                            Ready Stock</font>
-                                                    </div>
-                                                </div>
-                                                <div class="quickdetail">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="https://api.whatsapp.com/send?phone=62{{ $item->whatsapp }}&text=Halo,%20Saya%20tertarik%20dengan%20produk%20:%20{{ $item->name }}%20"
-                                                                target="blank">
-                                                                <button class="btnwa">
-                                                                    <span
-                                                                        class="glyphicon glyphicon-chevron-right"></span>
-                                                                    Whatsapp <u>{{ $item->whatsapp }}</u>
-                                                                </button>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="{{ route('product.show', ['product' => $item->id]) }}">
-                                                                <button>
-                                                                    <span class="glyphicon glyphicon-link"></span> Lihat
-                                                                    Detail Produk
-                                                                </button>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div style="padding:5px;text-align:center;">
-                                                <div style="min-height:50px">
-                                                    <a href="https://klikcitra.com/nyk-a75-hexa.html"
-                                                        title="{{ $item->name }}">
-                                                        {{ $item->name }} </a>
-                                                </div>
-                                                *Harga Hubungi CS <div class="medium" style="padding:5px">
-                                                    <font color="green"><span class="glyphicon glyphicon-ok"></span>
-                                                        Ready
-                                                        Stock</font>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+    </nav>
+    <div class="py-3" style="background-color: #F78009;height: auto;">
+        <div class="container">
+            @if (Session::has('alert'))
+                <div class="alert alert-{{ Session::get('alert') }}" role="alert">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
+            <div class="row">
+                <div class="col-sm mb-2">
+                    <h2 class="mb-0">{{ $settings['judul'] }}</h2>
+                    <span class="mt-0 pt-0">{{ $settings['sub_judul'] }}</span>
+                </div>
+                <div class="col-sm">
+                    <div class="bg-white px-3 py-3">
+                        <div class="row">
+                            <div class="col pr-1">
+                                <input type="text" id="filterProduct" class="form-control border-0"
+                                    placeholder="Ketik kata kunci pencarian">
+                            </div>
+                            <div class="col pl-0 border-left">
+                                <select name="" id="" class="form-control rounded-0 border-0 select-category">
+                                    <option value="" selected disabled>-- Pilih Kategori --</option>
+                                    @foreach ($category as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
-                    <div style="clear: both"></div>
-                    <div style="margin-bottom:-10px;padding:10px;text-align:center">
-                        <span class="el-icon-ok-circle"></span> Klik link berikut ini untuk melihat <u>semua
-                            produk</u> yang ada pada toko online kami. <a href="http://klikcitra.com/katalog"><span
-                                class="el-icon-hand-right"></span> Katalog Produk</a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-5">
+                    <select class="border-0 py-2 text-white px-3 select-category"
+                        style="background-color: #08044C; width: 320px;">
+                        <option value="" selected disabled>SEMUA KATEGORI PRODUK</option>
+                        @foreach ($category as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-sm w-100 bg-white py-2 mx-3 text-center" style="font-size: 14px;">
+                    <i class="bi bi-clock"></i>&nbsp;&nbsp;{{ $settings['open_order'] }}
+                </div>
+            </div>
+            <div class="row py-1 text-white px-3 mx-0" style="background-color: #08044C; margin-left: 0px;">
+                <marquee behavior="" direction="">{{ $settings['text_marquee'] }}</marquee>
+            </div>
+            <div class="row bg-white ml-0 py-3 px-3 mx-0">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach ($banners as $index => $item)
+                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                <img src="{{ asset('storage/banners/' . $item->image) }}" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="produk" class="produk my-5" style="min-height: 500px;">
+        @if ($detail)
+            <div class="container">
+                <div class="text-left mb-4 border-bottom">
+                    <h4>{{ $product->name }}</h4>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2">
+                    <div class="col mb-4">
+                        <div id="productCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                @foreach ($product->ImageAll as $index => $item)
+                                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                        <img src="{{ asset('storage/products/' . $item->image) }}"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-target="#productCarousel"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#productCarousel"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col mb-4">
+                        <h6>Deskripsi Produk</h6>
+                        <p>{{ $product->description }}</p>
+                    </div>
+                </div>
+                <button class="btn btn-dark w-100 btn-order" data-toggle="modal" data-target="#quikOrderModal"
+                    data-id="{{ $item->id }}" data-whatsapp="{{ $product->whatsapp }}"
+                    data-name="{{ $product->name }}" data-image="{{ $product->Image->image }}"><i
+                        class="bi bi-bag-check"></i> ORDER SEKARANG</button>
+            </div>
+        @else
+            <div class="container">
+                <div class="text-center mb-4 border-bottom">
+                    <h4>{{ count($products) < 1 ? 'Produk Tidak Ditemukan' : 'Produk' }}</h4>
+                </div>
+                <div class="row row-cols-2 row-cols-md-4">
+                    @foreach ($products as $index => $item)
+                        <div class="col mb-4 row-product" id="{{ strtolower(str_replace(' ', '-', $item->name)) }}">
+                            <div class="card h-100 card-product">
+                                <button class="btn btn-light btn-card btn-order" data-toggle="modal"
+                                    data-target="#quikOrderModal" data-id="{{ $item->id }}"
+                                    data-whatsapp="{{ $item->whatsapp }}" data-name="{{ $item->name }}"
+                                    data-image="{{ $item->Image->image }}">
+                                    <i class="bi bi-send-check-fill"></i>&nbsp;
+                                    Quick Order
+                                </button>
+                                <img src="{{ asset('storage/products/' . $item->Image->image) }}" width="200px"
+                                    height="200px" class="card-img-top image-product" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{ $item->name }}</h5>
+                                    <p class="card-text text-center mb-0 pb-0">*Harga hubungi CS</p>
+                                    <p class="card-text text-center mt-0 text-success"><i class="bi bi-check"></i>
+                                        Ready
+                                        Stock
+                                    </p>
+                                </div>
+                                <div class="card-footer p-0">
+                                    <button class="btn btn-primary w-100 rounded-0 btn-hubungi btn-order"
+                                        data-toggle="modal" data-target="#quikOrderModal" data-id="{{ $item->id }}"
+                                        data-whatsapp="{{ $item->whatsapp }}" data-name="{{ $item->name }}"
+                                        data-image="{{ $item->Image->image }}">Hubungi
+                                        Kami</button>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+    </section>
+    <div class="modal fade" id="quikOrderModal" tabindex="-1" aria-labelledby="quikOrderModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="quikOrderModalLabel">Nama Produk</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-cols-2 row-cols-md-">
+                        <div class="col">
+                            <img src="#" height="250px" width="250px" class="imageee img-thumbnail">
+                        </div>
+                        <div class="col">
+                            <a href="#" class="whatsapp btn btn-success w-100 mb-2" target="_blank">
+                                <i class="bi bi-whatsapp"></i> Whatsapp
+                            </a>
+                            <a href="#" class="detail btn btn-dark w-100">
+                                <i class="bi bi-eye-fill"></i> Lihat Detail Produk
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <h3 class="seo">CITRA NUSANTARA COMPUTER - Computer Accessories &#8211; Gaming Gear &#8211;
-                Sparepart Laptop</h3>
-
-
-
-
-
-            <div id="cleanwrap" style="padding:0">
-                <div class="containwrap">
-                    <div class="socmed">
-                        <a href="https://facebook.com/citranusantaracom" target="blank"
-                            title="Temukan kami di Facebook"><img width="170" height="34"
-                                src="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/facebook.jpg"></a>
-                        <a href="https://instagram.com/citranusantaracom" target="blank"
-                            title="Temukan kami di Instagram"><img width="170" height="34"
-                                src="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/instagram.jpg"></a>
-                    </div>
-                    <div style="clear: both"></div>
-                </div>
-            </div>
-            <div style="clear: both"></div>
-        </div> <!-- End Wrappercontain -->
-
-        <!-- Footer Area -->
-        <div id="footerback">
-            <div class="overback"
-                style="background-image: url(http://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/bg_footer.jpg);">
-            </div>
-            <div id="footerarea">
-                <div class="footbarwidget">
-                </div>
-                <div class="footbarwidget">
-                </div>
-                <div class="footbarwidget">
-                </div>
-                <div style="clear: both"></div>
-            </div>
-            <div class="footer">
-                <a href="https://klikcitra.com">PASAR NUSANTARA</a><br />
-                {{-- <span class="small">website by citra nusantara computer</span> --}}
-                <div style="clear: both"></div>
-            </div>
-        </div>
-
-    </div> <!-- End Wrapperwide -->
-    <!-- Kontak Kami (top_ -->
-    <div id="kontak-kami" class="popup" style="display: none;">
-        <div class="judul" style="margin-top:0;"><span class="glyphicon glyphicon-info-sign"></span> Kontak
-            Pasar Nusantara</div>
-        Berikut ini adalah detail kontak customer service kami:
-        <p>
-        <ul style="border-left:5px solid #E5E5E5">
-            <li>
-                <a href="sms:628977881100?body=Halo%20KlikCitra.Com!">
-                    <button class="btnsms">
-                        <span class="glyphicon glyphicon-chevron-right"></span> SMS <u>628977881100</u>
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="tel:628977881100">
-                    <button class="btntel">
-                        <span class="glyphicon glyphicon-chevron-right"></span> Telepon <u>628977881100</u>
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="https://api.whatsapp.com/send?phone=628977881100&text=Halo%20KlikCitra.Com!" target="blank">
-                    <button class="btnwa">
-                        <span class="glyphicon glyphicon-chevron-right"></span> Whatsapp <u>628977881100</u>
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:citranusantara@outlook.com">
-                    <button class="btnmail">
-                        <span class="glyphicon glyphicon-chevron-right"></span> Email ke citranusantara@outlook.com
-                    </button>
-                </a>
-            </li>
-        </ul>
-        </p>
-        <p class="small tred"><i class="glyphicon glyphicon glyphicon-time"></i> Buka Senin - Jumat Jam 09.00 -
-            17.30 , Sabtu jam 09.00 - 14.00 . Minggu & Hari Besar Tutup</p>
-    </div>
-
-    <!-- Info Bank -->
-    <div id="info-bank" class="popup" style="display: none;">
-        <div class="judul" style="margin-top:0;">Info Rekening Bank KlikCitra.Com</div>
-        Berikut ini adalah detail akun rekening bank kami, mohon untuk berhati-hati terhadap penipuan yang mengatas
-        namakan toko online kami:
-        <div style="max-width:930px">
-            <div class="banx">
-                <span class="bca"></span>
-                BCA<br /><span class="small">Rek.</span> 6110573888<br /><span class="small">An.
-                    CITRA NUSANTARA COMPUTER</span>
-            </div>
-
         </div>
     </div>
+    <section id="kontak" class="kontak mt-5 bg-white" style="min-height: 70px;">
+        <div class="container">
+            <div class="d-flex justify-content-center py-5">
+                <a href="{{ $settings['facebook'] }}" target="blank" title="Temukan kami di Facebook">
+                    <img width="170" height="34"
+                        src="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/facebook.jpg">
+                </a>
+                <a href="{{ $settings['instagram'] }}" target="blank" title="Temukan kami di Instagram">
+                    <img width="170" height="34"
+                        src="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/instagram.jpg">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="footerr" class="footerr" style="background-color: #08044C;">
+        <div class="container">
+            <div class="d-flex justify-content-center py-5 text-white">
+                <h6>{{ $settings['footer'] }}</h6>
+            </div>
+        </div>
+    </section>
 
     <div class="wabutton">
-        <a href="https://api.whatsapp.com/send?phone=628977881100&text=Halo%20KlikCitra.Com!" target="blank">
+        <a href="https://api.whatsapp.com/send?phone=62{{ $settings['whatsapp'] }}&amp;text=Halo%20!" target="blank">
             <img src="https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/images/wa/cs-2.png">
         </a>
     </div>
-    <script type='text/javascript'
-        src='https://klikcitra.com/wp-content/themes/lapax-2.0.1ad72/libs/jquery.fanbootui.js?ver=1.0' defer onload=''>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
 
+    <script type="text/javascript">
+        $('.btn-order').on('click', function() {
+            var id = $(this).attr('data-id')
+            var whatsapp = $(this).attr('data-whatsapp')
+            var image = $(this).attr('data-image')
+            var name = $(this).attr('data-name')
 
-    <a href="#" class="scrollup"></a>
+            $('.whatsapp').attr('href', 'http://wa.me/62' + whatsapp)
+            $('.detail').attr('href', "{{ url('detail') }}/" + id)
+            $('.imageee').attr('src', "{{ asset('storage/products') }}/" + image)
+            $('.modal-title').html(name)
+        })
 
+        $('.select-category').on('change', function() {
+            window.location.href = "{{ url('') }}?category=" + $(this).val()
+        })
+
+
+
+        $('#filterProduct').on('keyup', function(e) {
+            let query = $(this).val();
+            if (query) {
+                query = query.replace(/ /g, "-");
+                query = query.toLowerCase();
+                $('.row-product').hide();
+                $("[id*=" + query + "]").show();
+            } else {
+                $('.row-product').show();
+            }
+        });
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
+    -->
 </body>
 
 </html>
-<!-- Lapax Theme - Copyright by Oketheme.com -->

@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'LandingController@index');
+Route::get('/', 'LandingController@index')->name('landing');
+Route::get('/detail/{id}', 'LandingController@detail');
 
 Route::prefix('/admin')->group(function () {
     Auth::routes();
@@ -29,4 +30,10 @@ Route::prefix('/admin')->group(function () {
 
     Route::get('/profile', 'HomeController@profile')->name('profile.index');
     Route::post('/profile/{profile}', 'HomeController@updateProfile')->name('profile.update');
+
+    Route::get('/settings', 'SettingsController@index')->name('settings.index');
+    Route::post('/settings', 'SettingsController@update')->name('settings.update');
+
+    Route::get('/users', 'UserController@index')->name('users.index');
+    Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
 });

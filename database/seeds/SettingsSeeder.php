@@ -2,10 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
-class DatabaseSeeder extends Seeder
+class SettingsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,13 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'Superadmin',
-            'email' => 'superadmin@gmail.com',
-            'password' => Hash::make('admin123'),
-            'role' => 1
-        ]);
-
         DB::table('settings')->insert([
             'name' => 'judul',
             'title' => 'Judul',

@@ -84,6 +84,12 @@ class ProductController extends Controller
                         $image->is_main = $index == 0 ? 1 : 0;
                         $image->save();
                     }
+                } else {
+                    $request->session()->flash('alert', 'danger');
+                    $request->session()->flash('message', 'Minimal harus ada 1 gambar produk');
+
+                    DB::commit();
+                    return redirect()->back();
                 }
 
                 $request->session()->flash('alert', 'success');
