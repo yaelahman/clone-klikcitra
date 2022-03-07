@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="btn-group">
-                                        <a href="{{ asset('storage/products/' . $item->image) }}"
+                                        <a href="{{ asset('products/' . $item->image) }}"
                                             class="btn btn-info mt-3 lihat-gambar-{{ $index }}" target="_blank"><i
                                                 class="fas fa-eye"></i>&nbsp;Lihat
                                             Gambar</a>

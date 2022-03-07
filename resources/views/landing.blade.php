@@ -59,8 +59,11 @@
     </style>
 </head>
 
-<body style="background-color: #F5F5F5;">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #08044C;">
+<body style="background-image: url('{{ $settings['background'] }}');  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="background-color: {{ $settings['color_primary'] }};">
         <div class="container">
             <a class="navbar-brand" href="#kontak" style="font-size: 14px"><i
                     class="bi bi-telephone mr-2"></i>&nbsp;Kontak
@@ -76,9 +79,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link text-uppercase" href="{{ route('landing') }}"><i
                                 class="bi bi-house-door-fill"></i>&nbsp;Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="{{ route('landing.faq') }}"><i
+                                class="bi bi-patch-question"></i></i>&nbsp;FAQ</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
@@ -87,7 +94,7 @@
             </div>
         </div>
     </nav>
-    <div class="py-3" style="background-color: #F78009;height: auto;">
+    <div class="py-3" style="background-color: {{ $settings['color_secondary'] }};height: auto;">
         <div class="container">
             @if (Session::has('alert'))
                 <div class="alert alert-{{ Session::get('alert') }}" role="alert">
@@ -121,7 +128,7 @@
             <div class="row mt-3">
                 <div class="col-sm-5">
                     <select class="border-0 py-2 text-white px-3 select-category"
-                        style="background-color: #08044C; width: 320px;">
+                        style="background-color: {{ $settings['color_primary'] }}; width: 320px;">
                         <option value="" selected disabled>SEMUA KATEGORI PRODUK</option>
                         @foreach ($category as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -132,7 +139,8 @@
                     <i class="bi bi-clock"></i>&nbsp;&nbsp;{{ $settings['open_order'] }}
                 </div>
             </div>
-            <div class="row py-1 text-white px-3 mx-0" style="background-color: #08044C; margin-left: 0px;">
+            <div class="row py-1 text-white px-3 mx-0"
+                style="background-color: {{ $settings['color_primary'] }}; margin-left: 0px;">
                 <marquee behavior="" direction="">{{ $settings['text_marquee'] }}</marquee>
             </div>
             <div class="row bg-white ml-0 py-3 px-3 mx-0">
@@ -280,7 +288,7 @@
             </div>
         </div>
     </section>
-    <section id="footerr" class="footerr" style="background-color: #08044C;">
+    <section id="footerr" class="footerr" style="background-color: {{ $settings['color_primary'] }};">
         <div class="container">
             <div class="d-flex justify-content-center py-5 text-white">
                 <h6>{{ $settings['footer'] }}</h6>

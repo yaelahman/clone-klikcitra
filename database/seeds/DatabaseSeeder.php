@@ -22,6 +22,24 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('settings')->insert([
+            'name' => 'background',
+            'title' => 'Background',
+            'text' => 'https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm309-adj-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=2204002a48c0d2dc60c1a27a4cc4fd97'
+        ]);
+
+        DB::table('settings')->insert([
+            'name' => 'color_primary',
+            'title' => 'Warna Primer',
+            'text' => '#08044C'
+        ]);
+
+        DB::table('settings')->insert([
+            'name' => 'color_secondary',
+            'title' => 'Warna Sekunder',
+            'text' => '#F78009'
+        ]);
+
+        DB::table('settings')->insert([
             'name' => 'judul',
             'title' => 'Judul',
             'text' => 'PASAR NUSANTARA'

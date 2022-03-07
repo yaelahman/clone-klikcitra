@@ -57,7 +57,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="/admin">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -136,7 +136,7 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                href="/admin" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('profile.index') }}" aria-expanded="false">
@@ -158,6 +158,11 @@
                                     href="{{ route('banner.index') }}" aria-expanded="false"><i
                                         class="me-3 fa fa-table" aria-hidden="true"></i><span
                                         class="hide-menu">Banner</span></a></li>
+
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    href="{{ route('faq.index') }}" aria-expanded="false"><i class="me-3 fa fa-table"
+                                        aria-hidden="true"></i><span class="hide-menu">FAQ</span></a></li>
+
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                     href="{{ route('settings.index') }}" aria-expanded="false"><i
                                         class="me-3 fa fa-table" aria-hidden="true"></i><span

@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'LandingController@index')->name('landing');
+Route::get('/faq', 'LandingController@faq')->name('landing.faq');
 Route::get('/detail/{id}', 'LandingController@detail');
+
+Route::get('/artisan', function () {
+    Artisan::call('storage:link');
+});
 
 Route::prefix('/admin')->group(function () {
     Auth::routes();
@@ -37,5 +44,7 @@ Route::prefix('/admin')->group(function () {
 
         Route::get('/users', 'UserController@index')->name('users.index');
         Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
+
+        Route::resource('/faq', 'FAQController');
     });
 });

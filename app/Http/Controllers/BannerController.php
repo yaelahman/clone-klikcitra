@@ -56,14 +56,12 @@ class BannerController extends Controller
 
         DB::beginTransaction();
         try {
+            // dd(public_path() . '/banners');
             $banner = new Banner();
             $format = $request->file('image')->getClientOriginalName();
             $name = Str::random(11);
             $newName = $name . $format;
-            $request->file('image')->storeAs(
-                'public/banners',
-                $newName
-            );
+            $request->file('image')->move(public_path() . '/banners', $newName);
             $banner->image = $newName;
             $banner->order = $request->order;
             $banner->status = 1;

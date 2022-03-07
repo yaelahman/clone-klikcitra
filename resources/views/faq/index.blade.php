@@ -3,21 +3,21 @@
     <div class="page-breadcrumb">
         <div class="row align-items-center">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="page-title mb-0 p-0">Banner</h3>
+                <h3 class="page-title mb-0 p-0">FAQ</h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Banner</li>
+                            <li class="breadcrumb-item active" aria-current="page">FAQ</li>
                         </ol>
                     </nav>
                 </div>
             </div>
             <div class="col-md-6 col-4 align-self-center">
                 <div class="text-end upgrade-btn">
-                    <a href="{{ route('banner.create') }}" class="btn btn-success d-none d-md-inline-block text-white">
+                    <a href="{{ route('faq.create') }}" class="btn btn-success d-none d-md-inline-block text-white">
                         <i class="fas fa-plus"></i>&nbsp;
-                        Add Banner</a>
+                        Add FAQ</a>
                 </div>
             </div>
         </div>
@@ -36,44 +36,37 @@
         @endif
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-3">Data Banner</h4>
+                <h4 class="card-title mb-3">Data FAQ</h4>
                 <div class="table-responsive">
                     <table id="datatable1" class="table user-table no-wrap">
                         <thead>
                             <tr>
                                 <th class="border-top-0">No.</th>
-                                <th class="border-top-0" width="10%">Image Banner</th>
-                                <th class="border-top-0">Order</th>
+                                <th class="border-top-0">Pertanyaan</th>
+                                <th class="border-top-0">Jawaban</th>
                                 <th class="border-top-0">Status</th>
                                 <th class="border-top-0">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($banner as $index => $row)
+                            @foreach ($faq as $index => $row)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
+                                    <td>{{ $row->question }}</td>
+                                    <td>{{ $row->answer }}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm btn-modal-image"
-                                            href="{{ asset('banners/' . $row->image) }}" target="_blank">
-                                            Lihat
-                                        </a>
-                                    </td>
-                                    <td>{{ $row->order }}</td>
-                                    <td>
-                                        <span
-                                            class="btn btn-{{ $row->status == 1 ? 'success' : 'danger' }} btn-sm btn-flat"
+                                        <span class="btn btn-{{ $row->status ? 'success' : 'danger' }} btn-sm btn-flat"
                                             style="color: white; font-size: 12px">
-                                            {{ $row->status == 1 ? 'ACTIVE' : 'NON-ACTIVE' }}
+                                            {{ $row->status ? 'ACTIVE' : 'NON-ACTIVE' }}
                                         </span>
                                     </td>
                                     <td>
-                                        <a href="{{ route('banner.edit', ['banner' => $row->id]) }}"
+                                        <a href="{{ route('faq.edit', ['faq' => $row->id]) }}"
                                             class="btn btn-warning btn-sm btn-flat mr-2"><i class="fas fa-pencil-alt"></i>
                                             Edit</a>
                                         <button class="button-delete btn btn-danger btn-sm btn-flat mr-2"
                                             data-id="{{ $row->id }}" style="color: white"><i
-                                                class="fas fa-trash-alt"></i> Delete
-                                        </button>
+                                                class="fas fa-trash-alt"></i> Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -82,13 +75,10 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal -->
-    </div>
-    <form id="form-delete" action="" method="post" class="d-none">
-        @csrf
-        @method('delete')
-    </form>
+        <form id="form-delete" action="" method="post" class="d-none">
+            @csrf
+            @method('delete')
+        </form>
     </div>
 @endsection
 @section('script')
@@ -96,7 +86,7 @@
         $('.button-delete').click(function() {
             var id = $(this).attr('data-id');
             var form = $('#form-delete');
-            form.attr('action', "{{ url('/admin/banner') }}/" + id);
+            form.attr('action', "{{ url('/admin/faq') }}/" + id);
 
             Swal.fire({
                 title: 'Are you sure?',

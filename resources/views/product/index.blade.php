@@ -186,7 +186,7 @@
                     kolom = `${kolom}<tr>
                         <th>Gambar ${index + 1}</th>
                         <td>  
-                            <a href="{{ asset('storage/products/${row.image}') }}" class="btn btn-primary name="OKE" target="_blank">Lihat</a>
+                            <a href="{{ asset('products/${row.image}') }}" class="btn btn-primary name="OKE" target="_blank">Lihat</a>
                         </td>
                     </tr>`
                 })

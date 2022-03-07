@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Banner;
 use App\Category;
+use App\FAQ;
 use App\Product;
 use App\Settings;
 use Illuminate\Http\Request;
@@ -64,5 +65,26 @@ class LandingController extends Controller
             'detail' => true
         ];
         return view('landing', $data);
+    }
+
+    public function faq(Request $request)
+    {
+        $category = Category::all();
+
+        $settings = [];
+        foreach (Settings::all() as $set) {
+            $settings[$set->name] = $set->text;
+        }
+
+        // dd($products->first());
+
+        $data = [
+            'faq' => FAQ::where('status', true)->get(),
+            'category' => $category,
+            'settings' => $settings,
+            'banners' => Banner::orderBy('order', 'asc')->get(),
+            'detail' => true
+        ];
+        return view('faq', $data);
     }
 }

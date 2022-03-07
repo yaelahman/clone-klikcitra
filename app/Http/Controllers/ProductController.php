@@ -73,10 +73,7 @@ class ProductController extends Controller
                         $format = $row->getClientOriginalName();
                         $name = Str::random(11);
                         $newName = $name . $format;
-                        $row->storeAs(
-                            'public/products',
-                            $newName
-                        );
+                        $row->move(public_path() . '/products', $newName);
 
                         $image = new ImageProduct();
                         $image->id_product = $product->id;
@@ -164,10 +161,7 @@ class ProductController extends Controller
                         $format = $row->getClientOriginalName();
                         $name = Str::random(11);
                         $newName = $name . $format;
-                        $row->storeAs(
-                            'public/products',
-                            $newName
-                        );
+                        $row->move(public_path() . '/products', $newName);
 
                         $image = new ImageProduct();
                         $image->id_product = $product->id;
